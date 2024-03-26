@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './mainStyle.css'
 import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Register() {
   const [name, setName]=useState('');
@@ -15,11 +16,18 @@ async function handleRegister(e) {
     e.preventDefault()
     setLoading(true)
     if(password===confirmPassword){
-    const res=await fetch('http://localhost:8000/register',{
-    method:'POST',
-    body: JSON.stringify({name, email, password}),
-    headers:{'Content-Type':'application/json'}
-  })
+    // const res=await fetch('http://localhost:8000/register',{
+    // method:'POST',
+    // body: JSON.stringify({name, email, password}),
+    // headers:{'Content-Type':'application/json'}
+  // })
+
+  const url='https://http://localhost/server.php';
+  let fData=new FormData();
+  fData.append('name', name)
+  fData.append('email', email)
+  fData.append('password', password)
+
   setLoading(false)
   setRedirect(true)
 }
