@@ -16,7 +16,7 @@ function LogIn() {
     setLoading(true);
   
 
-    const url='';
+    const url='https://http://localhost/server.php';
     let fData=new FormData();
     fData.append('email', email)
     fData.append('password', password)
