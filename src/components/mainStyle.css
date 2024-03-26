@@ -1,0 +1,155 @@
+/* ////////////////hometemp//////////////////////// */
+  
+.blogPreviewContainer{
+    display: flex;
+    background: rgb(247,247,247);
+    margin-block: 10px;
+    border-radius: 4px;
+    padding: 1%;
+  }
+  
+  .blogPreviewContainer img{
+    border-radius: 4px;
+  }
+  
+  .blogPreviewContainer:hover{
+    background: rgb(228, 228, 228);
+  }
+  
+  /* ////////aboutus/////////// */
+  
+  .container{
+    min-height: 60vh;
+  }
+  .teamContainer{
+    margin-top: 1%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+  }
+  /* /////login////// */
+  @media (min-width:1000px) {
+  .wContainer{
+    margin-inline: 34%;
+    width: 32%;
+    margin-bottom: 4%;
+  }
+  }
+  
+  /* ///writeblog/// */
+  
+  .writeContainer{
+    background: rgb(247,247,247);
+  }
+  @media (min-width:1000px) {
+    .writeContainer{
+      margin-inline: 24%;
+      width: 52%;
+      margin-bottom: 4%;
+      margin-block: 4%;
+    }
+    }
+  /* //blogconntent/// */
+    .contentContainer h2{
+      margin-top: 4%;
+      text-align: center;
+    }
+  
+    .contentContainer p{
+      min-height: 60vh;
+    }
+    
+    /* ///// */
+    a{
+      text-decoration: none;
+      color: rgb(136, 198, 163);
+    }
+    
+    /* //allblogs// */
+    .allBlogsContainer{
+      margin-block:2%;
+      min-height: 60vh;
+    }
+    .h{
+      text-align: center;
+      margin-top: 2%;
+    }
+    .hl{
+      min-height: 60vh;
+      text-align: center;
+      margin-top: 2%;
+    }
+    
+    /* //profiledetails// */
+    
+    .detailsContainer{
+      margin-block: 4%;
+      min-height: 60vh;
+    }
+  
+    .textContainer{
+      margin-top: 2%;
+      padding: 1%;
+    }
+    
+    @media (min-width:800px) {
+    .flexedContainer{
+      display: flex;
+      border-radius: 4px;
+      padding: 1%;
+    }
+    .imageContainer img{
+      border-radius: 6px;
+    }
+    .imageContainer{
+      margin-right: 6%;
+    }
+    .textContainer{
+      padding: 1%;
+      border-left: 1px solid gray;
+    }
+  }
+  
+    .whyUs{
+      background: rgb(73, 173, 126);
+      border-radius: 4px;
+      padding: 1%;
+      padding-block: 4%;
+      margin-bottom: 4%;
+      color: white;
+    }
+    .features{
+      display: flex;
+      justify-content: space-between;
+      justify-content: space-around;
+    }
+    .whyUs p{
+      background: rgb(136, 198, 163);
+      padding: 1%;
+      border-radius: 4px;
+      color: white;
+    }
+  
+  /* /////// */
+    
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: rgb(136, 198, 163);
+    }
+    
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid gray;
+    }
+    
+    .separator:not(:empty)::before {
+      margin-right: .25em;
+    }
+    
+    .separator:not(:empty)::after {
+      margin-left: .25em;
+    }
