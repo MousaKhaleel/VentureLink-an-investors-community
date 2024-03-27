@@ -52,7 +52,7 @@ function HomePage() {
             </> }
       <main>{name && <>
       {loading && <h2 className="hl">Loading...</h2>}
-      {Business && <h1>Your Business, <Link  to="/profiledetails" style={{color:'rgb(136, 198, 163)'}}>{name}</Link>.</h1>}
+      {Business && <h1>Your Business, <Link  to="/profiledetails" style={{color:'rgb(42, 89, 63)'}}>{name}</Link>.</h1>}
       <hr/>
       {Business && <BusinessList Business={Business} />}
       </>}

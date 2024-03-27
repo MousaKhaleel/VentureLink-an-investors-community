@@ -37,7 +37,7 @@ function HeroSection() {
     className="p-5 mb-4 lc-block col-7 col-8 col-11">
     <div className="lc-block">
       <div editable="rich">
-        <h2 className="fw-bolder display-3" style={{color:'white'}}>Welcome to <span style={{color:'rgb(136, 198, 163)'}}>VentureLink</span></h2>
+        <h2 className="fw-bolder display-3" style={{color:'white'}}>Welcome to <span style={{color:'rgb(42, 89, 63)'}}>VentureLink</span></h2>
       </div>
     </div>
     <div className="lc-block col-md-8">
@@ -48,12 +48,12 @@ function HeroSection() {
       </div>
     </div>
     {!name && <div className="lc-block">
-      <Link className="btn" to="/login" role="button" style={{background: 'rgb(136, 198, 163)', color:'white'}}>
+      <Link className="btn" to="/login" role="button" style={{background: 'rgb(42, 89, 63)', color:'white'}}>
         Let's start
       </Link>
     </div>}
     {name && <div className="lc-block">
-      {/* <Link className="btn" to="/risefund" role="button" style={{background: 'rgb(136, 198, 163)', color:'white'}}>
+      {/* <Link className="btn" to="/risefund" role="button" style={{background: 'rgb(42, 89, 63)', color:'white'}}>
         Let's start
       </Link> */}
     </div>}

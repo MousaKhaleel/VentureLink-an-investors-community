@@ -1,5 +1,5 @@
 import { useEffect, useState  } from 'react';
-// import Logo from '../assets/3XHUPg-LogoMakr.png'
+import Logo from '../assets/6wOSCg-LogoMakr.png'
 // import defaultAv from '../assets/avatar/profile-42914_1280.png'
 import $ from 'jquery'; 
 import Popper from 'popper.js'; 
@@ -41,11 +41,10 @@ function NavBar() {
 //     }
 
     return ( 
-<nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'rgb(42, 89, 63)' }}>
+<nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'rgb(00, 00, 00)' }}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">
-      {/* <img src={Logo} alt="" width="40" /> VentureLink */}
-      VentureLink
+      <img src={Logo} alt="" width="40" />
     </a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -85,7 +84,7 @@ function NavBar() {
       {name && (
         <ul className="navbar-nav">
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background:'rgb(136, 198, 163)',color:'white',borderRadius:'2px'}}>
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background:'rgb(42, 89, 63)',color:'white',borderRadius:'2px'}}>
               <MdAccountBox /> {name}
             </a>
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
@@ -99,7 +98,7 @@ function NavBar() {
       {!name && (
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="/login" style={{background:'rgb(136, 198, 163)',color:'white',borderRadius:'2px'}}><IoMdLogIn /> Login</a>
+            <a className="nav-link" href="/login" style={{background:'rgb(42, 89, 63)',color:'white',borderRadius:'2px'}}><IoMdLogIn /> Login</a>
           </li>
         </ul>
       )}

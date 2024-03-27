@@ -77,8 +77,8 @@ if(redirect){
           <br />
         <p><small>Already have an account?<Link to='/login'> Let's LogIn.</Link></small></p>
         <br/>
-          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} >Register</button>}
-          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} disabled >Loading...</button>}
+          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} >Register</button>}
+          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} disabled >Loading...</button>}
         </form>
       </div>
       </div>

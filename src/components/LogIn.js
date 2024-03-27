@@ -57,8 +57,8 @@ function LogIn() {
           <br />
           <p><small>Don't have an account yet?<Link to='/register'> Let's start!</Link></small></p>
           <br/>
-          {!loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} >LogIn</button>}
-          {loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} disabled >Loading...</button>}
+          {!loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} >LogIn</button>}
+          {loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} disabled >Loading...</button>}
         </form>
       </div>
     </div>
