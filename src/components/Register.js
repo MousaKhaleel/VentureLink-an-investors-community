@@ -3,6 +3,7 @@ import './mainStyle.css'
 import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import $ from 'jquery'; 
 
 function Register() {
   const [name, setName]=useState('');
@@ -12,30 +13,43 @@ function Register() {
   const [loading, setLoading]=useState(false);
   const [redirect, setRedirect]=useState(false);
 
-async function handleRegister(e) {
-    e.preventDefault()
-    setLoading(true)
-    if(password===confirmPassword){
-    // const res=await fetch('http://localhost:8000/register',{
-    // method:'POST',
-    // body: JSON.stringify({name, email, password}),
-    // headers:{'Content-Type':'application/json'}
-  // })
-
-  const url='https://http://localhost/server.php';
-  let fData=new FormData();
-  fData.append('name', name)
-  fData.append('email', email)
-  fData.append('password', password)
-
-  setLoading(false)
-  setRedirect(true)
-}
-else{
-  alert('Password and confirm password do not match')
-  setLoading(false)
-}
-}
+  const handleRegister = (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    if (password === confirmPassword) {
+      const url = 'http://localhost/8000';
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('password', password);
+  
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+          if (response.success) {
+            setLoading(false);
+            setRedirect(true);
+          } else {
+            setLoading(false);
+            alert('Failed to register: ' + response.message);
+          }
+        },
+        error: function(xhr, status, error) {
+          setLoading(false);
+          alert('Failed to register: ' + error);
+        }
+      });
+    } else {
+      alert('Password and confirm password do not match');
+      setLoading(false);
+    }
+  };
+  
 
 if(redirect){
   return <Navigate to={'/login'} />
