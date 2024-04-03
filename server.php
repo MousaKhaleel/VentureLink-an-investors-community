@@ -16,7 +16,7 @@ if ($connection) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "SELECT `Email`, `Password` FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
+        $query = "SELECT * FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
         $connectionQuery = mysqli_query($connection, $query);
 
         if ($connectionQuery && mysqli_num_rows($connectionQuery) > 0) {

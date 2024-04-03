@@ -13,13 +13,17 @@ function LogIn() {
     setLoading(true);
   
     const url = 'http://localhost:80/server.php';
-    const data = { email, password };
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
   
     $.ajax({
       url: url,
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify(data),
+      data: formData,
+      processData: false,
+      contentType: false,
       success: function (responseData) {
         if (responseData.success) {
           setLoading(false);
