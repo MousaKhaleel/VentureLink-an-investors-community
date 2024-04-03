@@ -18,7 +18,7 @@ function Register() {
     setLoading(true);
   
     if (password === confirmPassword) {
-      const url = 'http://localhost/8000';
+      const url = 'http://localhost:80/server.php';
       const formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
@@ -60,7 +60,7 @@ if(redirect){
         <div className="container-md mx-auto w-100 p-5 mt-5 rounded" style={{ background: 'rgb(247,247,247)' }}>
             <h1>Register</h1>
             <br/>
-        <form onSubmit={handleRegister}>
+        <form method='POST' onSubmit={handleRegister}>
           <div className="form-group">
             <label htmlFor="email">Name</label>
             <input name="name" type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your name" />
