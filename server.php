@@ -11,7 +11,7 @@ session_start();
 $response = array();
 
 // Establish database connection
-$connection = mysqli_connect("localhost", "root", "", "investorcommunity");
+$connection = mysqli_connect("localhost", "root", "", "venture-link");
 
 if ($connection) {
 // Handle login
