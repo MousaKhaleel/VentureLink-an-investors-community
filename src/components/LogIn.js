@@ -72,10 +72,10 @@ function LogIn() {
             <input name="password" type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} id="password" placeholder="Password" />
           </div>
           <br />
-          <p><small>Don't have an account yet?<Link to='/register'> Let's start!</Link></small></p>
+          <p><small>Don't have an account yet?<Link to='/register'> Let's Register!</Link></small></p>
           <br/>
-          {!loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} >LogIn</button>}
-          {loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} disabled >Loading...</button>}
+          {!loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} >LogIn</button>}
+          {loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} disabled >Loading...</button>}
         </form>
       </div>
     </div>

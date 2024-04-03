@@ -62,7 +62,7 @@
     /* ///// */
     a{
       text-decoration: none;
-      color: rgb(42, 89, 63);
+      color: rgb(52, 114, 79);
     }
     
     /* //allblogs// */
@@ -124,7 +124,7 @@
       justify-content: space-around;
     }
     .whyUs p{
-      background: rgb(42, 89, 63);
+      background: rgb(52, 114, 79);
       padding: 1%;
       border-radius: 4px;
       color: white;
@@ -136,7 +136,7 @@
       display: flex;
       align-items: center;
       text-align: center;
-      color: rgb(42, 89, 63);
+      color: rgb(52, 114, 79);
     }
     
     .separator::before,

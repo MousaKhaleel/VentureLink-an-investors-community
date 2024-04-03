@@ -56,13 +56,20 @@ if(redirect){
 
     return ( 
       <div className="wContainer">
-        <div className="container-md mx-auto w-100 p-5 mt-5 rounded" style={{ background: 'rgb(247,247,247)' }}>
+        <div className="container-md mx-auto w-100 p-5 mt-3 rounded" style={{ background: 'rgb(247,247,247)' }}>
             <h1>Register</h1>
             <br/>
         <form onSubmit={handleRegister}>
           <div className="form-group">
-            <label htmlFor="email">Name</label>
+            <label htmlFor="name">Name</label>
             <input name="name" type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your name" />
+            <br/>
+            <label htmlFor="form-select">Type</label>
+            <select class="form-select" aria-label="Type" required>
+                  <option selected>Select your type</option>
+                  <option value="">Investor</option>
+                  <option value="">Business owner</option>
+          </select>
             <br/>
             <label htmlFor="email">Email</label>
             <input name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
@@ -76,8 +83,8 @@ if(redirect){
           <br />
         <p><small>Already have an account?<Link to='/login'> Let's LogIn.</Link></small></p>
         <br/>
-          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} >Register</button>}
-          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(42, 89, 63)', color:'white' }} disabled >Loading...</button>}
+          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} >Register</button>}
+          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} disabled >Loading...</button>}
         </form>
       </div>
       </div>
