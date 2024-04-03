@@ -1,44 +1,47 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import $ from 'jquery'; 
+import axios from 'axios';
+
 
 function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     const url = 'http://localhost:80/server.php';
     const formData = new FormData();
     formData.append('email', email);
     formData.append('password', password);
-  
-    $.ajax({
-      url: url,
-      type: 'POST',
-      contentType: 'application/json',
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function (responseData) {
-        if (responseData.success) {
-          setLoading(false);
-          setRedirect(true);
-        } else {
-          setLoading(false);
-          alert('Failed to login: ' + responseData.message);
+
+    try {
+      const response = await axios.post(url, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
         }
-      },
-      error: function (xhr, status, error) {
+      });
+
+      if (response.data.success) {
         setLoading(false);
-        alert('Failed to login: ' + error);
+        // Redirect or perform any other action upon successful login
+        setRedirect(true);
+        alert('Welcome, ' + response.data.name + '!'); // Greet the user with their name
+      } else {
+        setLoading(false);
+        setErrorMessage('Failed to login: ' + response.data.message);
       }
-    });
+    } catch (error) {
+      setLoading(false);
+      setErrorMessage('Failed to login: ' + error.message);
+    }
   };
+  
   
 
   if (redirect) {
