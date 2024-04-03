@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import $ from 'jquery'; 
 import axios from 'axios';
 
+export const UserContext = createContext();
+
+// Create a provider component
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -10,6 +21,7 @@ function LogIn() {
   const [loading, setLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const { setUser } = React.useContext(UserContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -29,9 +41,9 @@ function LogIn() {
 
       if (response.data.success) {
         setLoading(false);
-        // Redirect or perform any other action upon successful login
         setRedirect(true);
-        alert('Welcome, ' + response.data.name + '!'); // Greet the user with their name
+        setUser(response.data.name);
+        alert('Welcome, ' + response.data.name + '!');
       } else {
         setLoading(false);
         setErrorMessage('Failed to login: ' + response.data.message);
@@ -41,8 +53,6 @@ function LogIn() {
       setErrorMessage('Failed to login: ' + error.message);
     }
   };
-  
-  
 
   if (redirect) {
     return <Navigate to={'/'} />;
