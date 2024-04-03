@@ -13,7 +13,7 @@ function Register() {
   const [loading, setLoading]=useState(false);
   const [redirect, setRedirect]=useState(false);
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
   
@@ -24,31 +24,30 @@ function Register() {
       formData.append('email', email);
       formData.append('password', password);
   
-      $.ajax({
-        url: url,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-          if (response.success) {
-            setLoading(false);
-            setRedirect(true);
-          } else {
-            setLoading(false);
-            alert('Failed to register: ' + response.message);
+      try {
+        const response = await axios.post(url, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
           }
-        },
-        error: function(xhr, status, error) {
+        });
+  
+        if (response.data.success) {
           setLoading(false);
-          alert('Failed to register: ' + error);
+          setRedirect(true);
+        } else {
+          setLoading(false);
+          alert('Failed to register: ' + response.data.message);
         }
-      });
+      } catch (error) {
+        setLoading(false);
+        alert('Failed to register: ' + error.message);
+      }
     } else {
       alert('Password and confirm password do not match');
       setLoading(false);
     }
   };
+  
   
 
 if(redirect){

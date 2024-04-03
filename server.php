@@ -5,28 +5,40 @@ header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 
+// Start session
+session_start();
+
 $response = array();
 
 // Establish database connection
 $connection = mysqli_connect("localhost", "root", "", "investorcommunity");
 
 if ($connection) {
-    // Handle login
-    if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+// Handle login
+if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        $query = "SELECT * FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
-        $connectionQuery = mysqli_query($connection, $query);
+    $query = "SELECT * FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
+    $connectionQuery = mysqli_query($connection, $query);
 
-        if ($connectionQuery && mysqli_num_rows($connectionQuery) > 0) {
-            $response['success'] = true;
-            $response['message'] = "Login successful!";
-        } else {
-            $response['success'] = false;
-            $response['message'] = "Incorrect email or password!";
-        }
+    if ($connectionQuery && mysqli_num_rows($connectionQuery) > 0) {
+        // Fetch user data
+        $userData = mysqli_fetch_assoc($connectionQuery);
+        
+        // Set session variables
+        $_SESSION['email'] = $email;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['name'] = $userData['Name']; // Store user name in session
+
+        $response['success'] = true;
+        $response['message'] = "Login successful!";
+        $response['name'] = $userData['Name']; // Include user name in response
+    } else {
+        $response['success'] = false;
+        $response['message'] = "Incorrect email or password!";
     }
+}
     
     // Handle registration
     elseif (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
