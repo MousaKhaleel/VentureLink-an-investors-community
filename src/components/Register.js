@@ -18,7 +18,7 @@ function Register() {
     setLoading(true);
   
     if (password === confirmPassword) {
-      const url = 'http://localhost/8000';
+      const url = 'http://localhost:80/server.php';
       const formData = new FormData();
       formData.append('name', name);
       formData.append('email', email);
