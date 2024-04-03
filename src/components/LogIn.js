@@ -12,7 +12,7 @@ function LogIn() {
     e.preventDefault();
     setLoading(true);
   
-    const url = 'http://localhost:80/server.php';
+    const url = 'http://localhost:8000/server.php';
     const data = { email, password };
   
     $.ajax({
