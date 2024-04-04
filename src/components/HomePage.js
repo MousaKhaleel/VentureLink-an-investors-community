@@ -63,7 +63,7 @@ function HomePage() {
       <div className="imageContainer">
         <img src={Deal} width={'300px'}/></div>
         <div className="textContainer">
-        <h4>temp</h4>
+        <h4>temp.</h4>
         <p>temp.</p>
       </div>
       </div>
