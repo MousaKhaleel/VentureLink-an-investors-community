@@ -16,6 +16,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { UserProvider } from './components/UserContext';
 import AllBusiness from './components/AllBusiness';
 import Profile from './components/Profile';
+import BusinessList from './components/BusinessList';
+import BusinessDetails from './components/BusinessDetails';
 
 
 function App() {
@@ -40,17 +42,14 @@ function App() {
                 <Route path="/aboutus" element={<AboutUs />} />
             </Routes>
             <Routes>
-                <Route path="/allbusinesses" element={<AllBusiness />} />
+                <Route path="/allbusinesses" element={<BusinessList />} />
             </Routes>
             <Routes>
                 <Route path="/profile" element={<Profile />} />
             </Routes>
-            {/* <Routes>
-                <Route path="/Business/:id" element={<BusinessContent />} />
-            </Routes>
             <Routes>
-                <Route path="/profiledetails" element={<ProfileDetails />} />
-            </Routes> */}
+                <Route path="/Businessdetails/:id" element={<BusinessDetails />} />
+            </Routes>
         </BrowserRouter>
         <Footer />
         </UserProvider>

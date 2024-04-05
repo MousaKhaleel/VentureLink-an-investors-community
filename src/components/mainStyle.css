@@ -1,6 +1,6 @@
 /* ////////////////hometemp//////////////////////// */
   
-.blogPreviewContainer{
+.businessesPreviewContainer{
     display: flex;
     background: rgb(247,247,247);
     margin-block: 10px;
@@ -8,11 +8,11 @@
     padding: 1%;
   }
   
-  .blogPreviewContainer img{
+  .businessesPreviewContainer img{
     border-radius: 4px;
   }
   
-  .blogPreviewContainer:hover{
+  .businessesPreviewContainer:hover{
     background: rgb(228, 228, 228);
   }
   
@@ -65,8 +65,8 @@
       color: rgb(52, 114, 79);
     }
     
-    /* //allblogs// */
-    .allBlogsContainer{
+    /* //allBusinesses// */
+    .allBusinessesContainer{
       margin-block:2%;
       min-height: 60vh;
     }
