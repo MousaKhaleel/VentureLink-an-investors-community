@@ -14,6 +14,8 @@ import $ from 'jquery';
 import Popper from 'popper.js'; 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { UserProvider } from './components/UserContext';
+import AllBusiness from './components/AllBusiness';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -37,14 +39,17 @@ function App() {
             <Routes>
                 <Route path="/aboutus" element={<AboutUs />} />
             </Routes>
+            <Routes>
+                <Route path="/allbusinesses" element={<AllBusiness />} />
+            </Routes>
+            <Routes>
+                <Route path="/profile" element={<Profile />} />
+            </Routes>
             {/* <Routes>
                 <Route path="/Business/:id" element={<BusinessContent />} />
             </Routes>
             <Routes>
                 <Route path="/profiledetails" element={<ProfileDetails />} />
-            </Routes>
-            <Routes>
-                <Route path="/allbusinesses" element={<AllBusiness />} />
             </Routes> */}
         </BrowserRouter>
         <Footer />
