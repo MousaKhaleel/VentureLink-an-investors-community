@@ -29,11 +29,13 @@ if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
         // Set session variables
         $_SESSION['email'] = $email;
         $_SESSION['loggedin'] = true;
-        $_SESSION['name'] = $userData['Name']; // Store user name in session
+        $_SESSION['name'] = $userData['Name'];
+        $_SESSION['type'] = $userData['Type'];
 
         $response['success'] = true;
         $response['message'] = "Login successful!";
-        $response['name'] = $userData['Name']; // Include user name in response
+        $response['name'] = $userData['Name'];
+        $response['type'] = $userData['Type'];
     } else {
         $response['success'] = false;
         $response['message'] = "Incorrect email or password!";
@@ -45,8 +47,9 @@ if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $type = $_POST['type'];
 
-        $query = "INSERT INTO `users` (Name, Email, Password) VALUES ('$name', '$email', '$password')";
+        $query = "INSERT INTO `users` (Name, Email, Password, Type) VALUES ('$name', '$email', '$password', '$type')";
         $connectionQuery = mysqli_query($connection, $query);
 
         if ($connectionQuery) {

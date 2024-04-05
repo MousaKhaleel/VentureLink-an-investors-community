@@ -38,7 +38,7 @@ function NavBar() {
                   <a className="nav-link" href="/allbusinesses"><IoBusiness /> All Businesses</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/profile"><MdAccountCircle /> Profile</a>
+                  <a className="nav-link" href="/profile"><MdAccountCircle /> Your Profile</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/aboutus"><HiIdentification /> About us</a>
@@ -51,7 +51,7 @@ function NavBar() {
                   <a className="nav-link" href="/allbusinesses"><IoBusiness /> All Businesses</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/login"><MdAccountCircle /> Profile</a>
+                  <a className="nav-link" href="/login"><MdAccountCircle /> Your Profile</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/aboutus"><HiIdentification /> About us</a>
@@ -63,7 +63,7 @@ function NavBar() {
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background:'rgb(52, 114, 79)',color:'white',borderRadius:'2px'}}>
-                  <MdAccountBox /> {user.name}
+                  <MdAccountBox /> {user}
                 </a>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                   <li><a className="dropdown-item" onClick={handleLogout} href="/"><IoIosLogOut /> Log out</a></li>
