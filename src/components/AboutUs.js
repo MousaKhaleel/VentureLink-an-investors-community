@@ -2,6 +2,7 @@
 // import coolDefault from '../assets/avatar/profile-42914_1280.png'
 // import coolerDefault from '../assets/avatar/facebook_default_picture_by_adnac_d2r2hul-fullview1.jpg'
 import { Link } from 'react-router-dom';
+import "./mainStyle.css"
 
 function AboutUs() {
     return ( 
