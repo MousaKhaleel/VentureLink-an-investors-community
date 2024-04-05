@@ -21,7 +21,7 @@ function AboutUs() {
   {/* <img className="card-img-top" src={coolDefault} alt="YF" /> */}
   <div className="card-body">
     <p className="card-text">
-    Co-Founder CTO: Ahmad Aldrbea
+    Co-Founder, CTO: Ahmad Aldrbea
     </p>
   </div>
 </div>
