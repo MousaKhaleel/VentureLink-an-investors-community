@@ -29,7 +29,7 @@ function Footer() {
                     <div className="col-md-6 item text">
                     {/* <a href="/" >
                         <img src={Logo2} width={'200px'}/></a> */}
-                        <p>invest or somthin idk</p>
+                        <p>A new way of investing</p>
                     </div>
                     <div className="col item social"><a href="https://www.linkedin.com/in/mousa-khaleel/"><FaLinkedinIn /></a><a href="https://github.com/MousaKhaleel"><FaGithub /></a><a href="https://jo.linkedin.com/in/yazeed-fayoumi"><FaLinkedinIn /></a><a href="https://github.com/YazeedFayoumi"><FaGithub /></a></div>
                 </div>

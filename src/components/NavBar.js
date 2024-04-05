@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Logo from '../assets/6wOSCg-LogoMakr.png';
 import { FaHome } from "react-icons/fa";
-import { FaCloud } from "react-icons/fa";
+import { IoBusiness } from "react-icons/io5";
 import { HiIdentification } from "react-icons/hi";
 import { MdAccountCircle } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
@@ -35,10 +35,10 @@ function NavBar() {
             {user && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link" href="/allbusinesses"><FaCloud /> All Businesses</a>
+                  <a className="nav-link" href="/allbusinesses"><IoBusiness /> All Businesses</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/profile"><TbWritingSign /> Profile</a>
+                  <a className="nav-link" href="/profile"><MdAccountCircle /> Profile</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/aboutus"><HiIdentification /> About us</a>
@@ -48,10 +48,10 @@ function NavBar() {
             {!user && (
               <>
                 <li className="nav-item">
-                  <a className="nav-link" href="/allbusinesses"><FaCloud /> All Businesses</a>
+                  <a className="nav-link" href="/allbusinesses"><IoBusiness /> All Businesses</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/login"><TbWritingSign /> Profile</a>
+                  <a className="nav-link" href="/login"><MdAccountCircle /> Profile</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/aboutus"><HiIdentification /> About us</a>
@@ -62,7 +62,7 @@ function NavBar() {
           {user && (
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background:'rgb(42, 89, 63)',color:'white',borderRadius:'2px'}}>
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{background:'rgb(52, 114, 79)',color:'white',borderRadius:'2px'}}>
                   <MdAccountBox /> {user.name}
                 </a>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
@@ -74,7 +74,7 @@ function NavBar() {
           {!user && (
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/login" style={{background:'rgb(42, 89, 63)',color:'white',borderRadius:'2px'}}><IoMdLogIn /> Login</a>
+                <a className="nav-link" href="/login" style={{background:'rgb(52, 114, 79)',color:'white',borderRadius:'2px'}}><IoMdLogIn /> Login</a>
               </li>
             </ul>
           )}
