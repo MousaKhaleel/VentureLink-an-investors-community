@@ -1,19 +1,7 @@
-import React, { createContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
-
-export const UserContext = createContext();
-
-// Create a provider component
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
-};
+import { UserContext, UserProvider } from './UserContext';
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -21,7 +9,7 @@ function LogIn() {
   const [loading, setLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const { setUser } = React.useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();

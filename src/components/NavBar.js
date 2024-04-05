@@ -9,7 +9,7 @@ import { MdAccountBox } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
 import { IoMdLogIn } from "react-icons/io";
 import { TbWritingSign } from "react-icons/tb";
-import { UserContext } from './LogIn';
+import { UserContext } from './UserContext';
 
 function NavBar() {
   const { user, setUser } = useContext(UserContext);
