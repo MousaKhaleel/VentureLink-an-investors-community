@@ -12,10 +12,12 @@ import { TbWritingSign } from "react-icons/tb";
 import { UserContext } from './UserContext';
 
 function NavBar() {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, setUserEmail, setUserPassword } = useContext(UserContext);
 
   const handleLogout = () => {
     setUser(null);
+    setUserEmail(null);
+    setUserPassword(null);
   };
 
   return (
