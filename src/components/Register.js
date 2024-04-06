@@ -9,6 +9,7 @@ function Register() {
   const [name, setName]=useState('');
   const [email, setEmail]=useState('');
   const [password, setPassword]=useState('');
+  const [type, setType]=useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
   const [loading, setLoading]=useState(false);
   const [redirect, setRedirect]=useState(false);
@@ -23,6 +24,7 @@ function Register() {
       formData.append('name', name);
       formData.append('email', email);
       formData.append('password', password);
+      formData.append('type', type);
   
       try {
         const response = await axios.post(url, formData, {
@@ -65,10 +67,10 @@ if(redirect){
             <input name="name" type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your name" />
             <br/>
             <label htmlFor="form-select">Type</label>
-            <select class="form-select" aria-label="Type" required>
-                  <option selected>Select your type</option>
-                  <option value="">Investor</option>
-                  <option value="">Business owner</option>
+
+            <select  onChange={(e) => setType({type: e.target.value})} class="form-select" aria-label="Type" required>
+                  <option value="Investor">Investor</option>
+                  <option value="Business owner">Business owner</option>
           </select>
             <br/>
             <label htmlFor="email">Email</label>

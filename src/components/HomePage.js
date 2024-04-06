@@ -17,18 +17,6 @@ function HomePage() {
   const[loading,setLoading]=useState(false);
   const[allLoading,setAllLoading]=useState(false);
 
-//   useEffect(()=>{
-//     fetch('http://localhost:8000/profile',{
-//       credentials:'include',
-//       method:'GET'
-//     }).then(res=>{
-//       res.json().then(info=>{
-//         setId(info.id)
-//         setName(info.name)
-//       })
-//     },[])
-//     })
-
 // useEffect(() => {
 //   setAllLoading(true)
 //   fetch("http://localhost:8000/allBusinesses")
