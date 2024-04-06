@@ -4,8 +4,8 @@ import { UserContext } from "./UserContext";
 
 function Profile() {
     
-    const { user, userEmail, userPassword } = useContext(UserContext);
-    // , UserType
+    const { user, userEmail, userPassword, userType } = useContext(UserContext);
+
     return ( 
         <main>
         {/* {loading && <h2 className="hl">Loading...</h2>} */}
@@ -16,7 +16,7 @@ function Profile() {
     <li className="list-group-item">Name: {user}</li>
     <li className="list-group-item">Email: {userEmail}</li>
     <li className="list-group-item">Password: {userPassword}</li>
-    {/* <li className="list-group-item">Password: {UserType}</li> */}
+    <li className="list-group-item">Type: {userType}</li>
   </ul>
 </div>
         </div>

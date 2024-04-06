@@ -33,7 +33,7 @@ function LogIn() {
         setUser(response.data.name);
         setUserEmail(email);
         setUserPassword(password);
-        // setUserType(response.data.type);
+        setUserType(response.data.type);
       } else {
         setLoading(false);
         setErrorMessage('Failed to login: ' + response.data.message);
