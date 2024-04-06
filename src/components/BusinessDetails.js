@@ -10,8 +10,9 @@ function BusinessDetails() {
         <main>
         <div className="contentContainer">
         {/* {loading && <h2 className='hl'>loading...</h2>} */}
-            <h2>{content.area}</h2>
-            <p>{content.address}</p>
+            <h2>{content.type}</h2>
+            <p>City: {content.city}</p>
+            <p>Address: {content.address}</p>
         </div>
         </main>
      );
