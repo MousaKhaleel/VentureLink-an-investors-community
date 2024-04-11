@@ -9,7 +9,7 @@ function AboutUs() {
         <div className="container">
         <h1 style={{marginTop:'1%'}}>Who are we?</h1>
         <div className="teamContainer">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolerDefault} alt="MK" /> */}
   <div className="card-body">
     <p className="card-text">
@@ -17,7 +17,7 @@ function AboutUs() {
     </p>
   </div>
 </div>
-<div className="card" style={{ width: "18rem" }}>
+<div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolDefault} alt="YF" /> */}
   <div className="card-body">
     <p className="card-text">
@@ -25,7 +25,7 @@ function AboutUs() {
     </p>
   </div>
 </div>
-<div className="card" style={{ width: "18rem" }}>
+<div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolDefault} alt="YF" /> */}
   <div className="card-body">
     <p className="card-text">
@@ -33,7 +33,7 @@ function AboutUs() {
     </p>
   </div>
 </div>
-<div className="card" style={{ width: "18rem" }}>
+<div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolDefault} alt="YF" /> */}
   <div className="card-body">
     <p className="card-text">
@@ -41,7 +41,7 @@ function AboutUs() {
     </p>
   </div>
 </div>
-<div className="card" style={{ width: "18rem" }}>
+<div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolDefault} alt="YF" /> */}
   <div className="card-body">
     <p className="card-text">
