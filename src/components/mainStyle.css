@@ -96,11 +96,10 @@
     .flexedContainer{
       display: flex;
       border-radius: 4px;
-      padding: 1%; 
+      padding: 1%;
     }
     .imageContainer img{
       border-radius: 6px;
-      margin-left: 50px;
     }
     .imageContainer{
       margin-right: 6%;
@@ -108,10 +107,6 @@
     .textContainer{
       padding: 1%;
       border-left: 1px solid gray;
-    }
-    .textContainerTwo{
-      padding: 1%;
-      border-right: 1px solid gray;
     }
   }
   
