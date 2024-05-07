@@ -7,9 +7,9 @@ import "./mainStyle.css"
 function AboutUs() {
     return ( 
         <div className="container">
-        <h1 style={{marginTop:'1%'}}>Who are we?</h1>
+        <h1  style={{marginTop:'1%'}}>Who are we?</h1>
         <div className="teamContainer">
-            <div className="card" style={{ maxWidth: "18rem" }}>
+        <div className="card" style={{ maxWidth: "18rem" }}>
   {/* <img className="card-img-top" src={coolerDefault} alt="MK" /> */}
   <div className="card-body">
     <p className="card-text">
