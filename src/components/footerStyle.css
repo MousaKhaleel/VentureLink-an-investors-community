@@ -26,10 +26,10 @@
 
     cursor: pointer;
 }
-
+/* 
 html {
     font-size: 62.5%;
-}
+} */
 
 .footer {
     background-color: var(--black);
