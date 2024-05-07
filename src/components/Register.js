@@ -3,39 +3,54 @@ import './mainStyle.css'
 import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import $ from 'jquery'; 
 
 function Register() {
   const [name, setName]=useState('');
   const [email, setEmail]=useState('');
   const [password, setPassword]=useState('');
+  const [type, setType]=useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
   const [loading, setLoading]=useState(false);
   const [redirect, setRedirect]=useState(false);
 
-async function handleRegister(e) {
-    e.preventDefault()
-    setLoading(true)
-    if(password===confirmPassword){
-    // const res=await fetch('http://localhost:8000/register',{
-    // method:'POST',
-    // body: JSON.stringify({name, email, password}),
-    // headers:{'Content-Type':'application/json'}
-  // })
-
-  const url='https://http://localhost/server.php';
-  let fData=new FormData();
-  fData.append('name', name)
-  fData.append('email', email)
-  fData.append('password', password)
-
-  setLoading(false)
-  setRedirect(true)
-}
-else{
-  alert('Password and confirm password do not match')
-  setLoading(false)
-}
-}
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    if (password === confirmPassword) {
+      const url = 'http://localhost:80/server.php';
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('password', password);
+      formData.append('type', type);
+  
+      try {
+        const response = await axios.post(url, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+  
+        if (response.data.success) {
+          setLoading(false);
+          setRedirect(true);
+        } else {
+          setLoading(false);
+          alert('Failed to register: ' + response.data.message);
+        }
+      } catch (error) {
+        setLoading(false);
+        alert('Failed to register: ' + error.message);
+      }
+    } else {
+      alert('Password and confirm password do not match');
+      setLoading(false);
+    }
+  };
+  
+  
 
 if(redirect){
   return <Navigate to={'/login'} />
@@ -43,13 +58,20 @@ if(redirect){
 
     return ( 
       <div className="wContainer">
-        <div className="container-md mx-auto w-100 p-5 mt-5 rounded" style={{ background: 'rgb(247,247,247)' }}>
+        <div className="container-md mx-auto w-100 p-5 mt-3 rounded" style={{ background: 'rgb(247,247,247)' }}>
             <h1>Register</h1>
             <br/>
         <form onSubmit={handleRegister}>
           <div className="form-group">
-            <label htmlFor="email">Name</label>
+            <label htmlFor="name">Name</label>
             <input name="name" type="text" value={name} onChange={e=>setName(e.target.value)} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter your name" />
+            <br/>
+            <label htmlFor="form-select">Type</label>
+
+            <select  onChange={(e) => setType(e.target.value)} class="form-select" aria-label="Type" required>
+                  <option value="Investor">Investor</option>
+                  <option value="Business owner">Business owner</option>
+          </select>
             <br/>
             <label htmlFor="email">Email</label>
             <input name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
@@ -63,8 +85,8 @@ if(redirect){
           <br />
         <p><small>Already have an account?<Link to='/login'> Let's LogIn.</Link></small></p>
         <br/>
-          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} >Register</button>}
-          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(136, 198, 163)', color:'white' }} disabled >Loading...</button>}
+          { !loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} >Register</button>}
+          { loading && <button type="submit" className="btn w-100" style={{ background: 'rgb(52, 114, 79)', color:'white' }} disabled >Loading...</button>}
         </form>
       </div>
       </div>

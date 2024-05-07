@@ -6,38 +6,41 @@ import './footerStyle.css'
 
 function Footer() {
     return ( 
-        <div className="footer-dark">
-        <footer>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-6 col-md-3 item">
-                        <h3>Help</h3>
-                        <ul>
-                            <li><a href="/aboutus">Help center</a></li>
-                            <li><a href="/aboutus">Call us</a></li>
-                            <li><a href="/aboutus">How to start</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="/aboutus">Company</a></li>
-                            <li><a href="/aboutus">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-md-6 item text">
-                    {/* <a href="/" >
-                        <img src={Logo2} width={'200px'}/></a> */}
-                        <p>invest or somthin idk</p>
-                    </div>
-                    <div className="col item social"><a href="https://www.linkedin.com/in/mousa-khaleel/"><FaLinkedinIn /></a><a href="https://github.com/MousaKhaleel"><FaGithub /></a><a href="https://jo.linkedin.com/in/yazeed-fayoumi"><FaLinkedinIn /></a><a href="https://github.com/YazeedFayoumi"><FaGithub /></a></div>
-                </div>
-                <p className="copyright">VentureLink Inc. © 2024</p>
-            </div>
-        </footer>
-    </div>
-     );
+        <footer className="footer">
+        <div className="box-container">
+          <div className="info">
+            <h3>Overview: </h3>
+            <p> 
+            An online community of investors, where business sponsors around the world share ideas, experience, and struggle toward success with start-ups that have creative ideas in need of financial support and guidance
+            </p>
+          </div>
+          <div className="box">
+            <h3>Constructors: </h3>
+            <a target="_blank" href="">Ahmed Al Drabea </a>
+            <a target="_blank" href="https://www.linkedin.com/in/mousa-khaleel/">Mousa Khaleel </a>
+            <a target="_blank" href="https://www.linkedin.com/in/yazeed-fayoumi/">Yazeed Al Fayoumi </a>
+            <a target="_blank" href="https://github.com/mohammadalzoubi1">Muhammad Al-Zoubi </a>
+            <a target="_blank" href="https://www.linkedin.com/in/mohammad-hilal-949561269/">Muhammad Hilal </a>
+          </div>
+          <div className="box">
+            <h3>contact us: </h3>
+            <a href="#">Suggestions?</a>
+            <a target="_blank" href="https://web.whatsapp.com/+962 785266266">+962 785266266 </a>
+            <a target="_blank" href="mailto:seahmednail@gmail.com">seahmednail@gmail.com</a>
+          </div>
+          <div className="box">
+            <h3>sponsor us: </h3>
+            <input type="email" placeholder="enter your email..." />            
+          </div>
+        </div>
+        <div className="credit">
+          <p>
+            {" "}
+            <span> Venture Link </span> - 2024 | all rights reserved!
+          </p>
+        </div>
+      </footer>
+    );
 }
 
 export default Footer;

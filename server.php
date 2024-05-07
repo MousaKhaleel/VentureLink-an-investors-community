@@ -1,50 +1,73 @@
 <?php
-$email = $_POST['email'];
-$password = $_POST['password'];
-$connect = mysqli_connect("localhost", "root", "", "venturelink");
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Content-Type: application/json');
 
-//login
-if (mysqli_connect_errno()) {
-    echo "Failed to connect";
-} else {
-    $query = "SELECT * FROM users WHERE Email = '$email' AND Password = '$password'";
-    $result = mysqli_query($connect, $query);
+// Start session
+session_start();
 
-    if ($result) {
-        if (mysqli_num_rows($result) > 0) {
-            // echo "Logged in successfully";
+$response = array();
+
+// Establish database connection
+$connection = mysqli_connect("localhost", "root", "", "VentureLink");
+
+if ($connection) {
+// Handle login
+if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
+    $connectionQuery = mysqli_query($connection, $query);
+
+    if ($connectionQuery && mysqli_num_rows($connectionQuery) > 0) {
+        // Fetch user data
+        $userData = mysqli_fetch_assoc($connectionQuery);
+        
+        // Set session variables
+        $_SESSION['email'] = $email;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['name'] = $userData['Name'];
+        $_SESSION['type'] = $userData['Type'];
+
+        $response['success'] = true;
+        $response['message'] = "Login successful!";
+        $response['name'] = $userData['Name'];
+        $response['type'] = $userData['Type'];
+    } else {
+        $response['success'] = false;
+        $response['message'] = "Incorrect email or password!";
+    }
+}
+    
+    // Handle registration
+    elseif (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $type = $_POST['type'];
+
+        $query = "INSERT INTO `users` (Name, Email, Password, Type) VALUES ('$name', '$email', '$password', '$type')";
+        $connectionQuery = mysqli_query($connection, $query);
+
+        if ($connectionQuery) {
+            $response['success'] = true;
+            $response['message'] = "Added successfully!";
         } else {
-            // echo "False password or email";
+            $response['success'] = false;
+            $response['message'] = "Error occurred, try again.";
         }
     } else {
-        // echo "Query failed";
-    }
-
-    mysqli_close($connect);
-}
-
-
-//register
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-$connect = mysqli_connect("localhost", "root", "", "venturelink");
-
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to DB";
+        $response['success'] = false;
+        $response['message'] = "Invalid request!";
+    }   
+    mysqli_close($connection);
 } else {
-
-    $query = "INSERT INTO users (Email, First_name, Last_name, Password) VALUES ('$email', '$fname', '$lname', '$password')";
-
-    if (mysqli_query($connect, $query)) {
-        echo "Record added successfully";
-    } else {
-        echo "Error";
-    }
-
-    mysqli_close($connect);
+    $response['success'] = false;
+    $response['message'] = "Error connecting to MySQL server!";
 }
 
+echo json_encode($response);
 ?>
