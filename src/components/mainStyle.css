@@ -55,7 +55,8 @@
       text-align: center;
     }
   
-    .contentContainer p{
+    .contentContainer{
+      background: rgb(247,247,247);
       min-height: 60vh;
     }
     
