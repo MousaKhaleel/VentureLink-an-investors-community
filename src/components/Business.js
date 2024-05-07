@@ -12,7 +12,7 @@ function Business(temp) {
           <h2>{temp.type}</h2>
           <hr/>
           <br/>
-          <p>Price: {temp.price}$</p>
+          <p>Price: {temp.price}</p>
         </div>
       </div>
       </Link>

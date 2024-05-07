@@ -68,7 +68,7 @@ if(redirect){
             <br/>
             <label htmlFor="form-select">Type</label>
 
-            <select  onChange={(e) => setType(e.target.value)} class="form-select" aria-label="Type" required>
+            <select  onChange={(e) => setType({type: e.target.value})} class="form-select" aria-label="Type" required>
                   <option value="Investor">Investor</option>
                   <option value="Business owner">Business owner</option>
           </select>
